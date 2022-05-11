@@ -6,7 +6,7 @@ const ProtectedComponent = ({ component, ...args }) => {
 	const Component = withAuthenticationRequired(component, {
 		onRedirecting: () => <Loading />,
 	});
-	return <Component />;
+	return <Component {...args} />;
 };
 
 export default ProtectedComponent;

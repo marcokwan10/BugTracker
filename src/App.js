@@ -3,11 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedComponent from "./auth/protected-component";
 
-import AuthNav from "./components/auth-buttons/auth-nav";
 import Welcome from "./views/Welcome";
 import Loading from "./components/loading";
 import Profile from "./views/Profile";
-import AuthenticationButton from "./components/auth-buttons/authentication-button";
+import ExternalApi from "./views/ExternalAPI";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
@@ -25,6 +24,7 @@ function App() {
 			<h1>Auth0</h1>
 			<Routes>
 				<Route path="/profile" element={<ProtectedComponent component={Profile} />} />
+				<Route path="/external-api" element={<ProtectedComponent component={ExternalApi} />} />
 			</Routes>
 		</div>
 	);
