@@ -7,6 +7,7 @@ import Welcome from "./views/Welcome";
 import Loading from "./components/loading";
 import Profile from "./views/Profile";
 import ExternalApi from "./views/ExternalAPI";
+import Navbar from "./components/navbar";
 
 function App() {
 	const { isLoading, isAuthenticated } = useAuth0();
@@ -21,7 +22,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>Auth0</h1>
+			<Navbar />
 			<Routes>
 				<Route path="/profile" element={<ProtectedComponent component={Profile} />} />
 				<Route path="/external-api" element={<ProtectedComponent component={ExternalApi} />} />
